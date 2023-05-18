@@ -33,7 +33,9 @@ That's all! Have fun with notemaker and feel free to open issues and PRs if you 
 ### Setting up other repository as note targets
 In order to write comments onto issues in other repositories, we first need to grant this action accesss.
 The quickest way to do this is to [create a fine-grained personal access token (PAT)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-fine-grained-personal-access-token) that has the `Read and Write Issues` permission.
+
 Make sure to scope this token to **all** potential target repos that you want to distribute notes to.
+
 After you have obtained the token, store it inside of the `TARGET_TOKEN` GitHub Actions secret of your repository. Find out how to do this here: https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository.
 After this, you are all set to target the selected other repositories.
 
