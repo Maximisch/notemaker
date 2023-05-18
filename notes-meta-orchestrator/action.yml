@@ -1,0 +1,16 @@
+name: 'Manage Account Overview Tracking Issues'
+description: 'Automatically creates the necessary meta information for every acocunt overview tracking issue and reacts to modifications'
+author: '@maximisch'
+inputs:
+  token:
+    description: 'Personal access token for authenticating with the GitHub API'
+    required: true
+  targetToken:
+    description: 'Personal access token for authenticating with the GitHub API of the target repository. Will use default if not defined. Needs issues read and write permission to add comments.'
+    required: false
+outputs:
+  trigger-distribution: # Whether to trigger the distribution workflow
+    description: 'true if the distribution workflow should be triggered, false if not'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

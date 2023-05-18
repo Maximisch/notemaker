@@ -1,0 +1,10 @@
+name: 'Map notes to account overview tracking issues'
+description: 'Traverses all issues in the repository and maps notes to account overview tracking issues'
+author: '@maximisch'
+inputs:
+  token:
+    description: 'Personal access token for authenticating with the GitHub API'
+    required: true
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

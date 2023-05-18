@@ -1,0 +1,32 @@
+{
+  "name": "notes-meta-orchestrator",
+  "version": "1.0.0",
+  "description": "Developing the creation of a note distributor in a sterile environment",
+  "main": "meta-orchestrator.js",
+  "dependencies": {
+    "balanced-match": "^1.0.2",
+    "before-after-hook": "^2.2.3",
+    "brace-expansion": "^1.1.11",
+    "concat-map": "^0.0.1",
+    "deprecation": "^2.3.1",
+    "fs": "^0.0.1-security",
+    "is-plain-object": "^5.0.0",
+    "minimatch": "^3.1.2",
+    "node-fetch": "^2.6.9",
+    "once": "^1.4.0",
+    "tr46": "^0.0.3",
+    "tunnel": "^0.0.6",
+    "universal-user-agent": "^6.0.0",
+    "uuid": "^8.3.2",
+    "webidl-conversions": "^3.0.1",
+    "whatwg-url": "^5.0.0",
+    "wrappy": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "make-deploy": "ncc build --source-map --license licenses.txt"
+  },
+  "author": "@maximisch",
+  "license": "ISC"
+}

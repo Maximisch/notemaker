@@ -1,0 +1,14 @@
+name: 'Create issues for notes'
+description: 'Automatically creates a new issue for every level 1 heading in notes.md'
+author: '@maximisch'
+inputs:
+  token:
+    description: 'Personal access token for authenticating with the GitHub API'
+    required: true
+  noteFileName:
+    description: 'The name of the file to parse'
+    required: false
+    default: 'notes.md'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
