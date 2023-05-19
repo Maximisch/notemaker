@@ -1,0 +1,32 @@
+name: React to issue modifications
+
+on:
+  issues:
+    types:
+        - opened
+        - edited
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  process-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Sleep for 5 seconds to avoid collissions with other workflows
+        run: sleep 5s
+        shell: bash
+      - name: Validate potential account overview issue changes and act accordingly
+        id: meta-orchestrator
+        uses: ./notes-meta-orchestrator # refers to the action in the current directory
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          targetToken: ${{ secrets.TARGET_TOKEN }}
+      - name: Distribute issues including the potential new account overview issue
+        uses: ./notes-distributor
+        if: ${{ steps.meta-orchestrator.outputs.trigger-distribution == 'true' }}
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}

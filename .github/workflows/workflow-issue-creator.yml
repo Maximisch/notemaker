@@ -1,0 +1,32 @@
+name: Create issues for notes
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - notes.md
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+concurrency:
+  group: issue-creator
+  cancel-in-progress: true
+
+jobs:
+  create-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Create issues for notes
+        uses: ./notes-content-parser # refers to the action in the current directory
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Distribute issues to account overviews
+        uses: ./notes-distributor # refers to the action in the current directory
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}

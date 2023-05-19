@@ -1,0 +1,23 @@
+name: Distribute and map notes to accounts
+
+on:
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+concurrency:
+  group: notes-distributor
+  cancel-in-progress: true
+
+jobs:
+  distribute-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Distribute notes to account issues
+        uses: ./notes-distributor # refers to the action in the current directory
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
