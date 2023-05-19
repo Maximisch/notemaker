@@ -2,6 +2,9 @@
 Automating shared notetaking using GitHub integrated tools and common file formats.
 
 ## 📖 How to use
+### Setup
+Instantiate a private instance of this repository template inside of your GitHub account by using the "use this template" button in the top right.
+
 ### Storing and adding notes
 Store your notes in a file called `notes.md` in this repository. Every new note section needs to be started with a h1 heading (single # prefix on a new line).
 *notemaker* will split this file into new issues in this repository which are used as a store. If you want to modify notes before posting, you can modify the issue body.
