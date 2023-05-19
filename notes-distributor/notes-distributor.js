@@ -51,6 +51,7 @@ async function run() {
             let issueTitle = issue.title;
             for (let accountIssueID in accountIssueIDsToKeywords) {
                 let keywords = accountIssueIDsToKeywords[accountIssueID];
+                // Super high fidelity matching
                 if (keywords.some((keyword) => issueTitle.toLowerCase().includes(keyword.toLowerCase()))) {
                     if (accountIssueIDsToNoteIssueIDs[accountIssueID]) {
                         accountIssueIDsToNoteIssueIDs[accountIssueID].push(issue.number);

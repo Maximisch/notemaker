@@ -293,7 +293,7 @@ async function publishNote(issueNumber, sourceIssueUrl, targetIssueUrl, octokitS
     let issueTitle = noteIssue.data.title;
     let issueBody = noteIssue.data.body;
     // Assemble the comment text
-    let commentText = `# ${issueTitle}\r\n\r\n${issueBody}\r\n\r\n_This note was published from ${sourceIssueUrl} by the [note-keeping system](https://github.com/maximisch/notemaker)._`;
+    let commentText = `# ${issueTitle}\r\n\r\n${issueBody}\r\n\r\n_This note was published by the [note-keeping system](https://github.com/maximisch/notemaker)._`;
     // Create a comment on the target issue
     let targetIssueOwner = new RegExp(/https:\/\/github.com\/([a-zA-Z0-9-_]+)\/[a-zA-Z0-9-_]+\/issues\/[0-9]+/).exec(targetIssueUrl)[1];
     let targetIssueRepo = new RegExp(/https:\/\/github.com\/[a-zA-Z0-9-_]+\/([a-zA-Z0-9-_]+)\/issues\/[0-9]+/).exec(targetIssueUrl)[1];
